@@ -1,0 +1,18 @@
+group 'com.gmail.surfdudeboy.TestPlugin'
+version '1.0-SNAPSHOT'
+
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'sponge'
+        url = 'http://repo.spongepowered.org/maven'
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    compile 'org.spongepowered:spongeapi:5.0.0'
+}
