@@ -17,7 +17,7 @@ import io.github.surfdudeboy.badgebook.command.BadgesCommand;
 public class BadgeBook {
     
 	@Inject
-	Game game;
+	static Game game;
 	
 	@Inject
 	Logger log;
@@ -30,7 +30,11 @@ public class BadgeBook {
 	@Listener
 	public void onServerStart(GameStartingServerEvent e){
 		log.info("Badge Book has loaded");
-		Sponge.getCommandManager().register(this, badgeCmd, "hello");
+		Sponge.getCommandManager().register(this, badgeCmd, "badge", "badges", "badgebook");
+		game = Sponge.getGame();
 		
+	}
+	public static Game getGame(){
+		return game;
 	}
 }
